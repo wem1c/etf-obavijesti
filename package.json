@@ -2,6 +2,11 @@
   "name": "ucg_obavijesti",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Conor C. Peterson",
+    "email": "conorpetersondev@gmail.com",
+    "url": "https://conorpeterson.com/"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
