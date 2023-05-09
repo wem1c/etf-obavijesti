@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 
+import styles from "./Subscribe.module.css";
+
 const Subscribe = () => {
   const inputEl = useRef(null);
   const [message, setMessage] = useState("");
@@ -7,7 +9,7 @@ const Subscribe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/api/subscribe", {
+    const res = await fetch("https://etf-obavijesti.vercel.app/api/subscribe", {
       body: JSON.stringify({
         email: inputEl.current.value,
       }),
@@ -25,27 +27,31 @@ const Subscribe = () => {
     }
 
     inputEl.current.value = "";
-    setMessage("Success! 🎉 You are now subscribed to the newsletter.");
+    setMessage("Dobićete potvrdni email na unijetoj adresi! ✅");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor='email-input'>{"Email Address"}</label>
-      <input
-        id='email-input'
-        name='email'
-        placeholder='you@awesome.com'
-        ref={inputEl}
-        required
-        type='email'
-      />
-      <div>
-        {message
-          ? message
-          : `I'll only send emails when new content is posted. No spam.`}
-      </div>
-      <button type='submit'>{"Subscribe 💌"}</button>
-    </form>
+    <section className={styles.container}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label htmlFor='email-input' className={styles.label}>
+          {"Email Adresa"}
+        </label>
+        <input
+          id='email-input'
+          name='email'
+          placeholder='petar@email.com'
+          ref={inputEl}
+          required
+          type='email'
+        />
+        <p className={styles.statusMessage}>
+          <em>{message ? message : ``}</em>
+        </p>
+        <button className={styles.button} type='submit'>
+          {"Pretplati se 💌"}
+        </button>
+      </form>
+    </section>
   );
 };
 

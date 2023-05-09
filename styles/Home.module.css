@@ -1,0 +1,29 @@
+.main {
+  --footer-height: 110px;
+  --footer-height-md: 83px;
+
+  min-height: calc(100svh - var(--footer-height));
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    min-height: calc(100svh - var(--footer-height-md));
+  }
+}
+
+.title {
+  --fs-title: clamp(2.5rem, 4vw + 1rem, 4.5rem);
+
+  font-size: var(--fs-title);
+  font-weight: 600;
+  text-align: center;
+}
+
+.description {
+  --fs-description: clamp(1rem, 1vw + 1rem, 1.5rem);
+
+  font-size: var(--fs-description);
+  font-weight: 300;
+  text-align: center;
+  padding: 0 0.2rem;
+}

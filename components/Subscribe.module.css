@@ -1,0 +1,29 @@
+.container {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 0.1rem solid #f3e4c9;
+  border-radius: 1rem;
+}
+
+.form > p {
+  margin: 0.5rem 0rem;
+  height: 1rem;
+  color: white;
+}
+
+.button {
+  width: fit-content;
+  margin: 0.5rem auto;
+  background-color: #f3e4c9;
+  color: #384268;
+  border: 0.1rem solid #f3e4c9;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
