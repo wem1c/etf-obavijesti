@@ -21,9 +21,20 @@
 .button {
   width: fit-content;
   margin: 0.5rem auto;
+  padding: 0 1rem;
   background-color: #f3e4c9;
   color: #384268;
   border: 0.1rem solid #f3e4c9;
   border-radius: 0.5rem;
   font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #384268;
+  color: #f3e4c9;
+}
+
+.button:active {
+  transform: translateY(0.15rem);
 }

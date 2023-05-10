@@ -9,6 +9,8 @@ const Subscribe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setMessage("Zahtjev poslat. Čekam odgovor... ⌛");
+
     const res = await fetch("https://etf-obavijesti.vercel.app/api/subscribe", {
       body: JSON.stringify({
         email: inputEl.current.value,
@@ -22,7 +24,7 @@ const Subscribe = () => {
     const { error } = await res.json();
 
     if (error) {
-      setMessage(error);
+      setMessage(`Error: ${error} 🛑`);
       return;
     }
 
